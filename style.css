@@ -1,0 +1,262 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+
+    background: #ffffff12;
+    padding: 25px;
+
+    border: 1px solid #ffffff25;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px #0005;
+}
+
+header h1 {
+    color: #ffd700;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #ddd;
+    margin-bottom: 22px;
+}
+
+/* Score cards */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.stat-card {
+    background: #ffffff18;
+    padding: 13px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-card span {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.stat-card strong {
+    font-size: 23px;
+    color: #ffd700;
+}
+
+/* Game canvas */
+
+.game-area {
+    width: 100%;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    background: linear-gradient(
+        180deg,
+        #101a45,
+        #30245c
+    );
+
+    border: 3px solid #ffd700;
+    border-radius: 14px;
+}
+
+/* Buttons */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    background: #ffd700;
+    color: #222;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 12px 18px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #ffae00;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* Settings */
+
+.settings {
+    margin-top: 20px;
+    padding: 15px;
+
+    background: #ffffff15;
+    border-radius: 12px;
+}
+
+.settings h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #ffd700;
+}
+
+.setting-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.setting-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #ffd700;
+}
+
+/* Mobile controls */
+
+.mobile-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.mobile-controls button {
+    min-width: 115px;
+    touch-action: none;
+    user-select: none;
+}
+
+/* Game messages */
+
+.message {
+    margin-top: 20px;
+    padding: 20px;
+
+    background: #ffffff15;
+    border-radius: 12px;
+
+    line-height: 1.8;
+}
+
+.message h2 {
+    color: #ffd700;
+    margin-bottom: 8px;
+}
+
+.message p {
+    color: #eee;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game-container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-card {
+        padding: 10px;
+    }
+
+    .controls {
+        gap: 6px;
+    }
+
+    button {
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .mobile-controls {
+        gap: 10px;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

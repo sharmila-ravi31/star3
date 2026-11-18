@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#141e30">
+    <title>Star Catcher - Arcade Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <header>
+            <h1>⭐ Star Catcher</h1>
+            <p>Catch the stars and reach 300 points!</p>
+        </header>
+
+        <section class="stats" aria-label="Game statistics">
+            <div class="stat-card">
+                <span>🏆 Score</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>🎯 Level</span>
+                <strong id="level">1</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>❤️ Lives</span>
+                <strong id="lives">3</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>🌟 Best</span>
+                <strong id="highScore">0</strong>
+            </div>
+        </section>
+
+        <section class="game-area">
+            <canvas
+                id="gameCanvas"
+                width="800"
+                height="500"
+                aria-label="Star Catcher game area. Use the arrow keys or A and D to move the basket."
+            ></canvas>
+        </section>
+
+        <section class="controls" aria-label="Game controls">
+            <button id="startBtn">▶ Start Game</button>
+            <button id="pauseBtn" disabled>⏸ Pause</button>
+            <button id="restartBtn">🔄 Restart</button>
+            <button id="soundBtn">🔊 Sound ON</button>
+        </section>
+
+        <section class="settings">
+            <h2>⚙️ Game Settings</h2>
+
+            <label class="setting-option">
+                <input type="checkbox" id="motionToggle">
+                <span>Reduce animations</span>
+            </label>
+        </section>
+
+        <section class="mobile-controls">
+            <button id="leftBtn" aria-label="Move basket left">
+                ⬅ LEFT
+            </button>
+
+            <button id="rightBtn" aria-label="Move basket right">
+                RIGHT ➡
+            </button>
+        </section>
+
+        <section
+            id="message"
+            class="message"
+            role="status"
+            aria-live="polite"
+        >
+            <h2>Welcome to Star Catcher! ⭐</h2>
+            <p>Catch falling stars using your basket.</p>
+            <p>Use Arrow keys or A and D to move.</p>
+            <p>Press Start Game to begin.</p>
+        </section>
+
+        <footer>
+            <p>⭐ Star Catcher | Game Development Project</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
